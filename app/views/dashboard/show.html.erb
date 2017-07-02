@@ -1,0 +1,6 @@
+<% if current_user.present? %>
+  <h1><%= "#{@dashboard.organization.name} Dashboard" %></h1>
+  <p>Find me in app/views/dashboard/show.html.erb</p>
+
+  <p>email: <%= current_user.email %></p>
+<% end %>
