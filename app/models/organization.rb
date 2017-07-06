@@ -2,6 +2,7 @@ class Organization < ApplicationRecord
   has_one :dashboard, dependent: :destroy
   has_many :users
   has_many :members, through: :users
+  has_many :voter_guides, dependent: :destroy
 
   after_save :auto_create_dashboard
 
