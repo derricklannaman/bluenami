@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+// Had to manually add the next two require statements after add jquery-rails gem
+//= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

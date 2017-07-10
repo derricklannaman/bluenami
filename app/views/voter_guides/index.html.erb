@@ -1,0 +1,12 @@
+<h1>Voter Guides</h1>
+
+<% @guides.each do |guide| %>
+  <%= link_to voter_guide_path(guide) do %>
+    <div class="card-guides">
+      <%= guide.election_name %>
+      <div class="title">
+        <%= guide.created_at.strftime("%m/%d/%Y") %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,25 @@
+<nav class="top-level">
+  <nav class="navbar organization-bar">
+    <div class="container-fluid">
+        <div class="organization-brand">
+          <%= organization_name %>
+          <% if current_user %>
+            <%= link_to "Signout", destroy_user_session_path, method: :delete, class: "navbar-brand-link ui button pull-right" %>
+          <% end %>
+        </div>
+    </div>
+  </nav>
+  <nav class="navbar-default menu-action-bar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "Voter Guides", voter_guides_path, class: "navbar-brand-link ui button", "data-tooltip"=> "All voter guides", "data-position"=> "top center" %>
+        <%#= link_to "Link 1", "#", class: "navbar-brand-link ui button", "data-tooltip"=> "Find and view a Package", "data-position"=> "top center" %>
+        <%#= link_to "Link 1", "#", class: "navbar-brand-link ui button", "data-tooltip"=> "Create a new Code List", "data-position"=> "top center" %>
+        <%#= link_to "Link 1", "#", class: "navbar-brand-link ui button", "data-tooltip"=> "View Reports", "data-position"=> "top center" %>
+        <%#= link_to "Link 1", "#", class: "navbar-brand-link ui button", "data-tooltip"=> "Find and View Job Status", "data-position"=> "top center" %>
+      </div>
+    </div>
+  </nav>
+
+
+</nav>

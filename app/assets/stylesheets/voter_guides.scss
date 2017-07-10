@@ -1,0 +1,26 @@
+@import "color_palette";
+
+#card-new-guide,
+.card-guides, .card-office {
+  width: 22em;
+  height: 10em;
+  color: #FFF;
+  background-color: $default-blue;
+  padding: 5em;
+}
+
+.card-guides {
+  margin: 3px;
+  float: left;
+}
+
+.card-office {
+  margin: 3px;
+  padding: 0px;
+  .title {
+    font-size: 25px;
+    text-align: center;
+    background-color: $default-card-title;
+    border-bottom: $faint-white-highlight;
+  }
+}

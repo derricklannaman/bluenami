@@ -1,0 +1,18 @@
+<div class="menu-item-component">
+  <% if controller_name == "voter_guides" && action_name == "show" %>
+    <div class="content-title">
+      <%= link_to new_office_path(guide: @guide.id) do %>
+        <span>Add New Office</span>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if controller_name == "voter_guides" && action_name == "index" %>
+    <div class="content-title">
+      <%= link_to new_voter_guide_path do %>
+        <span>Create New Guide</span>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>

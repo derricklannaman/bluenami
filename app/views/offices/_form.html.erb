@@ -1,0 +1,29 @@
+<%= form_with(model: office, local: true) do |form| %>
+  <% if office.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(office.errors.count, "error") %> prohibited this office from being saved:</h2>
+
+      <ul>
+      <% office.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= hidden_field_tag(:guide_id, @guide_id) %>
+
+  <div class="actions">
+    <%= form.label :title%>
+    <%= select(:office, :title, @elected_positions) %>
+  </div>
+  <div class="actions">
+    <%= form.label :level%>
+    <%= select(:office, :level, ['Federal', 'Statewide', 'State','Regional',
+                                  'County', 'Local ISD', 'Local Govt']) %>
+    <%= form.label :term%>
+    <%= select(:office, :term, ['6 Years', '4 Years', '2 Years','1 Year']) %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

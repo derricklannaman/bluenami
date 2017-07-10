@@ -1,0 +1,26 @@
+<h1><%= @guide.election_name %> Voter Guide</h1>
+
+<% @offices.each do |office| %>
+  <div class="card-office">
+    <div class="title">
+      <%= office.title.titleize %>
+    </div>
+    <% if office.incumbent.present? %>
+      <div>
+        Incumbent:
+        <%= office.incumbent.first_name %>
+        <%= office.incumbent.last_name %>
+      </div>
+    <% else %>
+      <div>
+        <%= link_to "add incumbent", new_incumbent_path(office_id: office.id, guide_id: @guide.id), class: "btn-sm btn-warning" %>
+      </div>
+    <% end %>
+    <div>
+      Level: <%= office.level %>
+      Term: <%= office.term %>
+    </div>
+  </div>
+<% end %>
+
+

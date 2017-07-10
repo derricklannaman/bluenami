@@ -1,0 +1,15 @@
+<h1>new guide</h1>
+
+<%= form_for @guide, url: {action: "create"} do |f| %>
+  <%= hidden_field_tag(:organization_id, current_user.organization.id) %>
+
+  <div class="field-wrap">
+    <%= f.label :election_name %>
+    <%= f.text_field :election_name %>
+  </div>
+  <div class="field-wrap">
+    <%= f.label :year %>
+    <%= f.select(:year, Time.current.year..Time.current.year + 6) %>
+  </div>
+  <%= f.submit "submit" %>
+<% end %>
