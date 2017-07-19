@@ -5,6 +5,17 @@
         <span>Add New Office</span>
       <% end %>
     </div>
+    <div class="content-title">
+      <%= link_to new_office_path(guide: @guide.id) do %>
+        <span>Federal Offices</span>
+      <% end %>
+    </div>
+    <div class="content-title">
+      <%= link_to new_office_path(guide: @guide.id) do %>
+        <span>Statewide</span>
+      <% end %>
+    </div>
+
   <% end %>
 
   <% if controller_name == "voter_guides" && action_name == "index" %>

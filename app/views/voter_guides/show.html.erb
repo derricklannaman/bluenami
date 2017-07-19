@@ -1,26 +1,48 @@
 <h1><%= @guide.election_name %> Voter Guide</h1>
-
-<% @offices.each do |office| %>
-  <div class="card-office">
-    <div class="title">
-      <%= office.title.titleize %>
-    </div>
-    <% if office.incumbent.present? %>
-      <div>
-        Incumbent:
-        <%= office.incumbent.first_name %>
-        <%= office.incumbent.last_name %>
-      </div>
-    <% else %>
-      <div>
-        <%= link_to "add incumbent", new_incumbent_path(office_id: office.id, guide_id: @guide.id), class: "btn-sm btn-warning" %>
+<div class="container">
+  <div class="col-md-6">
+    <% @offices.each do |office| %>
+      <div class="card-office">
+        <div class="title">
+          <%= office.title.titleize %>
+        </div>
+        <% if office.incumbent.present? %>
+          <div>
+            Incumbent:
+            <%= office.incumbent.first_name %>
+            <%= office.incumbent.last_name %>
+          </div>
+        <% else %>
+          <div>
+            <%= link_to "add incumbent", new_incumbent_path(office_id: office.id, guide_id: @guide.id), class: "btn-sm btn-warning" %>
+          </div>
+        <% end %>
+        <div>
+          Level: <%= office.level %>
+          Term: <%= office.term %>
+        </div>
+        <div>
+          <%= link_to "Add Challenger", new_candidate_path(office_id: office.id, guide_id: @guide.id), class: "btn-sm btn-warning" %>
+        </div>
       </div>
     <% end %>
-    <div>
-      Level: <%= office.level %>
-      Term: <%= office.term %>
-    </div>
   </div>
-<% end %>
-
-
+  <div class="col-md-6">
+    <!-- candidate goes here -->
+      <% @offices.each do |office| %>
+        <div class="card-office">
+            <div class="title">
+              <%= office.title.titleize %>
+            </div>
+            <%# binding.pry %>
+            <% if office.candidates.official_challenger.challenger == true %>
+              <div>
+                Challenger:
+                <%= office.candidates.official_challenger.first_name %>
+                <%= office.candidates.official_challenger.last_name %>
+              </div>
+            <%# end %>
+          <% end %>
+        </div>
+      <% end %>
+  </div>

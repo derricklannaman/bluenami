@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root "dashboard#show"
   resources :voter_guides
   resources :offices
-  resources :incumbents
+  resources :incumbents, :candidates
 end
