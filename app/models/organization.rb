@@ -4,6 +4,8 @@ class Organization < ApplicationRecord
   has_many :members, through: :users
   has_many :voter_guides, dependent: :destroy
 
+  validates :name, presence: true
+
   after_save :auto_create_dashboard
 
   def auto_create_dashboard
